@@ -1,5 +1,5 @@
 import axios from "axios";
-const BASE_URL = "https://farruolia-tuiter-backend.herokuapp.com/"
+const BASE_URL = "https://farruolia-tuiter-backend.herokuapp.com"
 const TUITS_API = `${BASE_URL}/api/tuits`;
 const USERS_API = `${BASE_URL}/api/users`;
 
