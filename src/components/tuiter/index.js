@@ -13,6 +13,7 @@ import Messages from "../messages";
 import Lists from "../lists";
 import {Login} from "../profile/login";
 import Signup from "../profile/signup";
+import MyLikes from "../profile/my-likes";
 
 function Tuiter () {
   return(
@@ -35,10 +36,11 @@ function Tuiter () {
               <Route path="/messages" element={<Messages/>}/>
               <Route path="/bookmarks" element={<Bookmarks/>}/>
               <Route path="/lists" element={<Lists/>}/>
-              <Route path="/profile" element={<Profile/>}/>
+              <Route path="/profile/*" element={<Profile/>}/>
               <Route path="/profile/edit" element={<EditProfile/>}/>
-              <Route path="/profile/mytuits" element={<Profile/>}/>
+              {/*<Route path="/profile/mytuits" element={<Profile/>}/>*/}
               <Route path="/signup" element={<Signup/>}/>
+              {/*//<Route path="/profile/mylikes" element={<MyLikes/>}/>*/}
             </Routes>
           </div>
           <div className="ttr-right-column">
