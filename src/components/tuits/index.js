@@ -1,10 +1,13 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import './tuits.css';
 import Tuit from "./tuit";
 import * as likesService from "../../services/likes-service";
 import * as dislikesService from "../../services/dislikes.service";
 
 function Tuits({tuits = [], deleteTuit, refreshTuits}) {
+
+    const [tuitsState, setTuits] = useState(tuits);
+    useEffect(() => setTuits(tuits), [tuits]);
 
     const likeTuit = (tuit) =>
         likesService
@@ -21,18 +24,24 @@ function Tuits({tuits = [], deleteTuit, refreshTuits}) {
 
 
     return (
-        <>
-            <ul className="list-group">
-                {
-                    tuits.map(tuit =>
-                        <Tuit key={tuit._id}
-                              deleteTuit={deleteTuit}
-                              likeTuit={likeTuit}
-                              dislikeTuit={dislikeTuit}
-                              tuit={tuit}/>)
-                }
-            </ul>
-        </>
+        <div>
+            {tuitsState.length > 0 &&
+                <ul className="list-group">
+                    {
+                        tuitsState.map(tuit =>
+                            <Tuit key={tuit._id}
+                                  deleteTuit={deleteTuit}
+                                  likeTuit={likeTuit}
+                                  dislikeTuit={dislikeTuit}
+                                  tuit={tuit}/>)
+                    }
+                </ul>
+            }
+            {
+                tuitsState.length < 1 &&
+                <h4>No Tuits</h4>
+            }
+        </div>
   );
 }
 
