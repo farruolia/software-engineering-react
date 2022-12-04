@@ -39,7 +39,7 @@ function Tuits({tuits = [], deleteTuit, refreshTuits}) {
             }
             {
                 tuitsState.length < 1 &&
-                <h4>No Tuits</h4>
+                <h6>No Tuits</h6>
             }
         </div>
   );
