@@ -38,9 +38,7 @@ function Tuiter () {
               <Route path="/lists" element={<Lists/>}/>
               <Route path="/profile/*" element={<Profile/>}/>
               <Route path="/profile/edit" element={<EditProfile/>}/>
-              {/*<Route path="/profile/mytuits" element={<Profile/>}/>*/}
               <Route path="/signup" element={<Signup/>}/>
-              {/*//<Route path="/profile/mylikes" element={<MyLikes/>}/>*/}
             </Routes>
           </div>
           <div className="ttr-right-column">
