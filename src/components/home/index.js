@@ -32,8 +32,7 @@ const Home = () => {
           .then(findTuits)
   return(
     <div className="ttr-home">
-      <div className="border border-bottom-0">
-        <h4 className="fw-bold p-2">Home Screen</h4>
+      <h1>Home</h1>
         {
           uid &&
           <div className="d-flex">
@@ -67,7 +66,6 @@ const Home = () => {
             </div>
           </div>
         }
-      </div>
       <Tuits tuits={tuits} deleteTuit={deleteTuit}/>
     </div>
   );

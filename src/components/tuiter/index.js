@@ -15,6 +15,8 @@ import More from "../more";
 import {Login} from "../profile/login";
 import Movies from "../movies";
 import MovieDetails from "../movies/details";
+import Signup from "../profile/signup";
+import MyTuits from "../profile/my-tuits";
 
 function Tuiter () {
   return(
@@ -39,9 +41,8 @@ function Tuiter () {
               <Route path="/lists" element={<Lists/>}/>
               <Route path="/profile" element={<Profile/>}/>
               <Route path="/profile/edit" element={<EditProfile/>}/>
-              <Route path="/movies" element={<Movies/>}/>
-              <Route path="/movies/:imdbID" element={<MovieDetails/>}/>
-              <Route path="/more" element={<More/>}/>
+              <Route path="/signup" element={<Signup/>}/>
+              <Route path="/profile/mytuits" element={<Profile/>}/>
             </Routes>
           </div>
           <div className="ttr-right-column">

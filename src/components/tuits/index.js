@@ -5,14 +5,14 @@ import * as likesService from "../../services/likes-service";
 
 function Tuits({tuits = [], deleteTuit, refreshTuits}) {
 
-    const likeTuit = (tuit) =>
+    const likeTuit = (tuit, like) =>
         likesService
-            .userTogglesTuitLikes("me", tuit._id)
+            .userTogglesTuitLikes("me", tuit._id, like)
             .then(refreshTuits)
             .catch(e => alert(e))
     return (
-        <div>
-            <ul>
+        <>
+            <ul className="list-group">
                 {
                     tuits.map(tuit =>
                         <Tuit key={tuit._id}
@@ -21,7 +21,7 @@ function Tuits({tuits = [], deleteTuit, refreshTuits}) {
                               tuit={tuit}/>)
                 }
             </ul>
-        </div>
+        </>
   );
 }
 

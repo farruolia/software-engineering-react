@@ -1,6 +1,6 @@
 import * as service from "../../services/auth-service"
 import {Route, Routes, useNavigate} from "react-router-dom";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import MyTuits from "./my-tuits";
 
 const Profile = () => {
@@ -19,16 +19,14 @@ const Profile = () => {
         .then(() => navigate('/login'));
   }
   return(
-      <div>
-        <h4>{profile.username}</h4>
-        <h6>@{profile.username}</h6>
-        <button onClick={logout}>
-          Logout</button>
-          <Routes>
-              <Route path="/mytuits"
-                     element={<MyTuits/>}/>
-          </Routes>
-      </div>
+      <>
+          <h1>Profile</h1>
+          <h4>{profile.username}</h4>
+          <h6>@{profile.username}</h6>
+          <button className="btn btn-primary mb-3" onClick={logout}>
+              Logout</button>
+          <MyTuits/>
+      </>
   );
 };
 export default Profile;

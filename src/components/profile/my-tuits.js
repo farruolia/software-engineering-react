@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import * as service from "../../services/tuits-service";
-import Tuits from "../tuits/tuit";
+import Tuits from "../tuits";
 
 const MyTuits = () => {
     const [tuits, setTuits] = useState([]);
@@ -13,8 +13,8 @@ const MyTuits = () => {
     const deleteTuit = (tid) =>
         service.deleteTuit(tid)
             .then(findMyTuits);
-
     return(
+
         <Tuits tuits={tuits}
                deleteTuit={deleteTuit}/>
     );
