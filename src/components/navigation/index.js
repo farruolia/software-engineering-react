@@ -15,7 +15,7 @@ function Navigation() {
     {label: 'Lists', icon: 'fa-list', path: '/lists'},
     {label: 'Profile', icon: 'fa-user', path: '/profile'},
     {label: 'Login', icon: 'fa-user', path: '/login'},
-    {label: 'Sign Up', icon: 'fa-user-plus', path:'/signup'}
+    {label: 'Sign Up', icon: 'fa-user-plus', path: '/signup'}
   ];
   return (
     <div className="ttr-navigation">
@@ -39,6 +39,6 @@ function Navigation() {
         Tuit</a>
     </div>
   );
-};
+}
 
 export default Navigation;

@@ -1,18 +1,18 @@
 import * as service from "../../services/auth-service"
-import {Route, Routes, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import React, {useEffect, useState} from "react";
 import MyTuits from "./my-tuits";
 
 const Profile = () => {
   const navigate = useNavigate();
   const [profile, setProfile] = useState({});
-  useEffect(async () => {
-    try {
-      const user = await service.profile();
-      setProfile(user);
-    } catch (e) {
-      navigate('/login');
-    }
+  useEffect( async () => {
+      try {
+          const user = await service.profile();
+          setProfile(user);
+      } catch (e) {
+          navigate('/login');
+      }
   }, []);
   const logout = () => {
     service.logout()

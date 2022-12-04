@@ -27,7 +27,7 @@ const Signup = () => {
                            onChange={(e) => setNewUser({...newUser, password: e.target.value})}
                     />
                 </div>
-                <div className="form-grou pmb-3">
+                <div className="form-group mb-3">
                     <label htmlFor="email">Email: </label>
                     <input type="email" className="form-control" id="email" placeholder="Email"
                            onChange={(e) => setNewUser({...newUser, email: e.target.value})}

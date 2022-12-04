@@ -5,9 +5,9 @@ import * as likesService from "../../services/likes-service";
 
 function Tuits({tuits = [], deleteTuit, refreshTuits}) {
 
-    const likeTuit = (tuit, like) =>
+    const likeTuit = (tuit) =>
         likesService
-            .userTogglesTuitLikes("me", tuit._id, like)
+            .userTogglesTuitLikes("me", tuit._id)
             .then(refreshTuits)
             .catch(e => alert(e))
     return (
