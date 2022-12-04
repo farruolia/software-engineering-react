@@ -11,31 +11,21 @@ const TuitStats = ({tuit, likeTuit, dislikeTuit}) => {
                 {/*{this.props.tuit.stats && this.props.tuit.stats.retuits}*/}
             </div>
             <div className="col text-center">
-                <span onClick={() => likeTuit(tuit)}>
-                    {
-                        tuit.stats.likes > 0 &&
-                        <i className="fas fa-thumbs-up"
-                           style={{color: 'red'}}></i>
-                    }
-                    {
-                        tuit.stats.likes <= 0 &&
-                        <i className="far fa-thumbs-up"></i>
-                    }
+                <span>
+                    <i className={tuit.stats.likes > 0 ? "fas fa-thumbs-up" : "far fa-thumbs-up"}
+                       style={{color: tuit.stats.likes > 0 ? 'red': ''}}
+                       onClick={() => likeTuit(tuit)}>
+                    </i>
                     {tuit.stats && tuit.stats.likes}
                 </span>
             </div>
             <div className="col text-center">
-                    <span onClick={() => dislikeTuit(tuit)}>
-                        {
-                            tuit.stats.dislikes > 0 &&
-                            <i className="fas fa-thumbs-down"></i>
-                        }
-                        {
-                            tuit.stats.dislikes <= 0 &&
-                            <i className="far fa-thumbs-down"></i>
-                        }
-                        {tuit.stats && tuit.stats.dislikes}
-                    </span>
+                <span>
+                    <i className={tuit.stats.dislikes > 0 ? "fas fa-thumbs-down" : "far fa-thumbs-down"}
+                           onClick={() => dislikeTuit(tuit)}>
+                    </i>
+                    {tuit.stats && tuit.stats.dislikes}
+                </span>
             </div>
             <div className="col text-center">
                 <i className="far fa-inbox-out"></i>
