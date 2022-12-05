@@ -1,6 +1,6 @@
 import Tuits from "../tuits";
 import {useEffect, useState} from "react";
-import * as service from "../../services/dislikes.service";
+import * as service from "../../services/dislikes-service";
 
 const MyDislikes = () => {
 
