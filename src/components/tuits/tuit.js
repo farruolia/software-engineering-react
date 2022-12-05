@@ -34,9 +34,7 @@ const Tuit = ({tuit, deleteTuit, likeTuit, dislikeTuit}) => {
                     }
                     <TuitStats tuit={tuit} likeTuit={likeTuit} dislikeTuit={dislikeTuit}/>
             </div>
-
         </div>
-
     </li>
   );
 }
